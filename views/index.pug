@@ -1,5 +1,16 @@
 extends layout
 
+block css
+  link(rel="stylesheet", href="/stylesheets/homepage.css")
+
 block content
-  h1= title
-  p Welcome to #{title}
+  div.container
+    div.first-screen
+      div.mask
+      div.text
+        h1 No.1 | 10.28
+        h2 你眼中的世界
+        p “她这么辛苦种田就是为了每天这么吃啊？”“对啊，人生不就是这样吗！”
+      div.scroll-bottom
+        //- p(class="oi oi-chevron-bottom")
+        img(src="/images/arrow-down.png", alt="")
