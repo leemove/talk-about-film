@@ -29,8 +29,9 @@ app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   indentedSyntax: false, // true = .sass and false = .scss
-  sourceMap: false,
-  outputStyle: 'compressed'
+  sourceMap: true,
+  response: false,
+  outputStyle: 'extended'
 }));
 
 app.use('/css', postcssMiddleware({
@@ -45,6 +46,7 @@ app.use('/css', postcssMiddleware({
   ],
   src: function(req) {
     let destPath = 'public/stylesheets'
+    console.log(destPath)
     return path.join(destPath, req.url) 
   }
 }));
