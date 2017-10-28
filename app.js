@@ -33,7 +33,7 @@ app.use(sassMiddleware({
   outputStyle: 'compressed'
 }));
 
-app.use(postcssMiddleware({
+app.use('/css', postcssMiddleware({
   plugins: [
     /* Plugins */
     autoprefixer({
@@ -44,7 +44,6 @@ app.use(postcssMiddleware({
     })
   ],
   src: function(req) {
-    console.log(req.url, 'url')
     let destPath = 'public/stylesheets'
     return path.join(destPath, req.url) 
   }
