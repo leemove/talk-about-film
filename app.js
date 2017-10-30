@@ -25,16 +25,20 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cookieParser());
+
+//  只会处理.css的请求
+
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   indentedSyntax: false, // true = .sass and false = .scss
   sourceMap: true,
   response: false,
-  outputStyle: 'extended'
+  outputStyle: 'extended',
+  response: false
 }));
 
-app.use('/css', postcssMiddleware({
+app.use('/stylesheets', postcssMiddleware({
   plugins: [
     /* Plugins */
     autoprefixer({
@@ -46,7 +50,7 @@ app.use('/css', postcssMiddleware({
   ],
   src: function(req) {
     let destPath = 'public/stylesheets'
-    console.log(destPath)
+    console.log(req.url)
     return path.join(destPath, req.url) 
   }
 }));
