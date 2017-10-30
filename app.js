@@ -50,7 +50,6 @@ app.use('/stylesheets', postcssMiddleware({
   ],
   src: function(req) {
     let destPath = 'public/stylesheets'
-    console.log(req.url)
     return path.join(destPath, req.url) 
   }
 }));
