@@ -1,5 +1,14 @@
-.first-screen{
-  background: url("/images/bg.jpg") center;
+.rcontainer{
+  .swiper-container{
+     height:100%;
+    .swiper-wrapper{
+      &:first-child{
+        background: url('/images/bg.jpg') no-repeat center;
+      }
+    }
+  }
+}
+.first-sceen{
   // linear-gradient(to bottom,#ffffff 70%, #444444 100%);
   position: absolute;
   left:0;

@@ -1,6 +1,27 @@
 $(function () {
+  var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'vertical',
+    loop: true,
+    
+    // 如果需要分页器
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    // 如果需要滚动条
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  })
   function init () {
-    $('.other-screen').css('margin-top', $('div.first-screen').height() + 'px')
+    console.log($(window).height())
+    $('.swiper-wrapper').height($(window).height())
+    $('.swiper-wrapper').width($(window).width())
   }
   init()
 })

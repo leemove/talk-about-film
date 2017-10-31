@@ -2,25 +2,19 @@ extends layout
 
 block css
   link(rel="stylesheet", href="/stylesheets/homepage.css")
+  link(rel="stylesheet", href="https://cdn.bootcss.com/Swiper/4.0.1/css/swiper.min.css")
 
 block content
-  div.container
-    div.first-screen
-      div.mask
-      div.text
-        h1 No.1 | 10.28
-        h2 你眼中的世界
-        p “她这么辛苦种田就是为了每天这么吃啊？”“对啊，人生不就是这样吗！”
-      div.scroll-bottom
-        //- p(class="oi oi-chevron-bottom")
-        img(src="/images/arrow-down.png", alt="")
-    div.clearfix.visible-xs
-    div.other-screen
-      .articles
-        .article.media
-          .media-body
-            h4 Leon
-            p Leon的门打开，一束好象来自天堂的光照在Mathilda脸上。给他快乐，从不发问。细节和大方向都很出色，一部控制得几乎完美的电影。
+  div.rcontainer
+    .swiper-container
+      .swiper-wrapper
+        .mask
+          h1 No.1 | 10.28
+          h2 你眼中的世界
+          p “她这么辛苦种田就是为了每天这么吃啊？”“对啊，人生不就是这样吗！”
+      .swiper-wrapper
+    .swiper-button-next
 
 block js
+  script(src="https://cdn.bootcss.com/Swiper/4.0.1/js/swiper.min.js")
   script(src="/javascripts/homepage.js")
