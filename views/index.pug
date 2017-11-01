@@ -2,19 +2,37 @@ extends layout
 
 block css
   link(rel="stylesheet", href="/stylesheets/homepage.css")
-  link(rel="stylesheet", href="https://cdn.bootcss.com/Swiper/4.0.1/css/swiper.min.css")
+  link(rel="stylesheet", href="https://cdn.bootcss.com/fullPage.js/2.9.4/jquery.fullpage.min.css")
 
 block content
-  div.rcontainer
-    .swiper-container
-      .swiper-wrapper
-        .mask
-          h1 No.1 | 10.28
-          h2 你眼中的世界
-          p “她这么辛苦种田就是为了每天这么吃啊？”“对啊，人生不就是这样吗！”
-      .swiper-wrapper
-    .swiper-button-next
-
+  div#fullpage
+    #menu
+    .section
+      a.text
+        h1 No.1 | 10.28
+        h2 你眼中的世界
+        p “她这么辛苦种田就是为了每天这么吃啊？”“对啊，人生不就是这样吗！”
+      img(src="/images/bg.jpg")
+    .section
+      .articles.container
+        .info
+          p 一天一个分享,电影 | 音乐 | 小故事...
+        .article
+          .media-body
+            h3.media-heading 白夜追凶
+            small 作者: 渣斌
+            .poster
+            p “她这么辛苦种田就是为了每天这么吃啊？”“对啊，人生不就是这样吗！”...
+              a.read(href="/article/2") 阅读全文
+        .article
+          .media-body
+            h3.media-heading 白夜追凶
+            small 作者: 渣斌
+            .poster
+            p “她这么辛苦种田就是为了每天这么吃啊？”“对啊，人生不就是这样吗！”...
+              a.read(href="/article/2") 阅读全文
+        .more
+          a(href="") 阅读更多
 block js
-  script(src="https://cdn.bootcss.com/Swiper/4.0.1/js/swiper.min.js")
+  script(src="https://cdn.bootcss.com/fullPage.js/2.9.4/jquery.fullpage.min.js")
   script(src="/javascripts/homepage.js")
