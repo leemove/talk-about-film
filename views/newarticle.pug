@@ -1,0 +1,29 @@
+extends layout
+
+block css
+  link(rel="stylesheet", href="/lib/editor.md-master/css/editormd.min.css")
+  link(rel="stylesheet", href="/stylesheets/newArticle.css")
+block content
+  .container
+    h1 新的文章
+    form
+      .form-group
+        label(for="title")
+        input#title.form-control(placeholder="标题" aria-describedby="titlehelper")
+        small#titlehelper.form-text.text-muted 文章的标题 类似"豆瓣9.9，再也找不到比它评价更牛的剧了"
+      form
+      .form-group
+        label(for="file")
+        input#file.form-control(placeholder="讨论的作品" aria-describedby="filehelper")
+        small#filehelper.form-text.text-muted 作品的名称但又不只局限于作品
+      .form-group
+        div.mdedit
+          label 文章内容
+          div#editormd
+            <textarea style="display:none;" id="md">在这里编辑文章</textarea>
+      .form-group
+      button.btn.btn-primary 提交
+    
+block js
+  script(src="/lib/editor.md-master/editormd.min.js")
+  script(src="/javascripts/newArticle.js")

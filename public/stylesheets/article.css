@@ -7,6 +7,11 @@
 .container .text-subtitle {
   margin-top: 15px; }
 
+.container .content {
+  padding-bottom: 50px; }
+  .container .content img {
+    width: 100%; }
+
 .footer {
   position: fixed;
   width: 100%;
