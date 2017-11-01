@@ -1,2 +1,15 @@
-.container
-  h1 哈哈哈
+extends layout
+block css
+  link(rel="stylesheet", href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css")
+  link(rel="stylesheet", href="/stylesheets/article.css")
+block content
+  .cover
+  .container
+    h2 你是我最满足的烦恼
+    p.text-subtitle ----关于<你眼中的世界>
+  .footer
+    .previos.float-left 上一篇
+    .next.float-right 下一篇
+    a(herf="/")
+      i(class="fa fa-home" aria-hidden="true")
+block js
