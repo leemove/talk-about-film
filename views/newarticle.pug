@@ -17,6 +17,10 @@ block content
         input#file.form-control(placeholder="讨论的作品" aria-describedby="filehelper")
         small#filehelper.form-text.text-muted 作品的名称但又不只局限于作品
       .form-group
+        label(for="author")
+        input#author.form-control(placeholder="署名" aria-describedby="authorhelper")
+        small#authorhelper.form-text.text-muted 你的大名或者笔名
+      .form-group
         input#datetimepicke.form-controlr(
           data-provide="datepicker"
           type="text", name="" )

@@ -16,7 +16,8 @@
   position: absolute;
   top: 0; }
   #fullpage .section .articles .article .poster {
-    background: url("/images/baiyezhuixiong.webp") no-repeat center;
+    background: no-repeat center;
+    background-image: url("/images/baiyezhuixiong.webp");
     background-size: cover;
     height: 100px; }
   #fullpage .section .articles .article p.author {

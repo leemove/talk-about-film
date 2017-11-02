@@ -10,27 +10,28 @@ block content
     .section
       a.text
         h1 No.1 | 10.28
-        h2 你眼中的世界
+        h2 你眼中的世界`
         p “她这么辛苦种田就是为了每天这么吃啊？”“对啊，人生不就是这样吗！”
       img(src="/images/bg.jpg")
     .section
       .articles.container
         .info
           p 一天一个分享,电影 | 音乐 | 小故事...
-        .article
-          .media-body
-            h3.media-heading 白夜追凶
-            small 作者: 渣斌
-            .poster
-            p “她这么辛苦种田就是为了每天这么吃啊？”“对啊，人生不就是这样吗！”...
-              a.read(href="/article/2") 阅读全文
-        .article
-          .media-body
-            h3.media-heading 白夜追凶
-            small 作者: 渣斌
-            .poster
-            p “她这么辛苦种田就是为了每天这么吃啊？”“对啊，人生不就是这样吗！”...
-              a.read(href="/article/2") 阅读全文
+        each article, index in articles
+          .article
+            .media-body
+              h3.media-heading #{article.title}
+              small 作者: #{article.author}
+              .poster
+              p #{article.title}...
+                a.read(href="/article/2") 阅读全文
+        //- .article
+        //-   .media-body
+        //-     h3.media-heading 白夜追凶
+        //-     small 作者: 渣斌
+        //-     .poster
+        //-     p “她这么辛苦种田就是为了每天这么吃啊？”“对啊，人生不就是这样吗！”...
+        //-       a.read(href="/article/2") 阅读全文
         .more
           a(href="") 阅读更多
 block js

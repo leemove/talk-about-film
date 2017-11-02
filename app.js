@@ -12,6 +12,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var article = require('./routes/article')
 var app = express();
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/talkfilm')
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, '连接错误'));

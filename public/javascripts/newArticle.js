@@ -8,7 +8,8 @@ $(function () {
       title: $('#title').val(),
       name: $('#file').val(),
       time: $('#datetimepicke').val(),
-      content: $('#md').html()
+      content: $('#md').html(),
+      author: $('#author').val(),
     }
     $.post('/article/new', data, function (data) {
       console.log(data)
