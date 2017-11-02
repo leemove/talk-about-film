@@ -7,11 +7,18 @@ var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
 var postcssMiddleware = require('postcss-middleware');
 var autoprefixer = require('autoprefixer');
-
+var mongoose = require('mongoose');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var article = require('./routes/article')
 var app = express();
+mongoose.connect('mongodb://localhost:27017/talkfilm')
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, '连接错误'));
+db.once('open', function() {
+  // we're connected!
+  console.log('数据库连接成功!')
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,7 +26,7 @@ app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+// app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false

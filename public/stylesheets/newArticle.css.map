@@ -4,6 +4,6 @@
 	"sources": [
 		"newArticle.scss"
 	],
-	"mappings": "AAAA,AAAA,OAAO,CAAA;EACL,MAAM,EAAC,KAAM,GACd",
+	"mappings": "AAAA,AAAA,OAAO,CAAA;EACL,MAAM,EAAC,KAAM,GACd;;AACD,AAAA,OAAO,CAAA;EACL,UAAU,EAAC,IAAK,GACjB",
 	"names": []
 }
