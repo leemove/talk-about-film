@@ -7,12 +7,15 @@ block css
 block content
   div#fullpage
     #menu
-    .section
-      a.text
-        h1 No.1 | 10.28
-        h2 你眼中的世界`
-        p “她这么辛苦种田就是为了每天这么吃啊？”“对啊，人生不就是这样吗！”
-      img(src="/images/bg.jpg")
+    .section(style={
+      background: `url("${firstArticle.firstImgSrc}") no-repeat  center ,
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8))`,
+    'background-size': 'cover'
+    })
+      a.text(herf=`/article/${firstArticle.index}`)
+        h2 No.#{firstArticle.index} | #{firstArticle.time}
+        h1 #{firstArticle.name}
+        p #{firstArticle.title}
     .section
       .articles.container
         .info
@@ -20,11 +23,11 @@ block content
         each article, index in articles
           .article
             .media-body
-              h3.media-heading #{article.title}
+              h4.media-heading #{article.name}
               small 作者: #{article.author}
-              .poster
+              .poster(style={'background-image':`url("${article.firstImgSrc}")`})
               p #{article.title}...
-                a.read(href="/article/2") 阅读全文
+                a.read(href=`/article/${article._id}`) 阅读全文
         //- .article
         //-   .media-body
         //-     h3.media-heading 白夜追凶
@@ -33,7 +36,7 @@ block content
         //-     p “她这么辛苦种田就是为了每天这么吃啊？”“对啊，人生不就是这样吗！”...
         //-       a.read(href="/article/2") 阅读全文
         .more
-          a(href="") 阅读更多
+          //- a(href="") 阅读更多
 block js
   script(src="https://cdn.bootcss.com/fullPage.js/2.9.4/jquery.fullpage.min.js")
   script(src="/javascripts/homepage.js")

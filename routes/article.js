@@ -2,9 +2,7 @@ var express = require('express');
 var router = express.Router();
 const articleCtr = require('../controllers/article')
 
-router.get('/:id', function (req, res) {
-  res.render('article', { title: '你眼中的世界' });
-})
+router.get('/:id', articleCtr.detail)
 
 router.post('/new', articleCtr.add)
 

@@ -8,7 +8,6 @@ var articleSchema = mongoose.Schema({
   author: String,
   index: Number
 })
-articleSchema.index({ time: 1 });
 articleSchema.set('autoIndex', true)
 articleSchema.statics.findLastnDay = function (n) {
   return this.find()
