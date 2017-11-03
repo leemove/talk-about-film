@@ -1,6 +1,9 @@
 const Article = require('../model/article')
 // const moment = require('moment')
 const moment = require('moment')
+
+const util = require('../util')
+
 var marked = require('marked');
 const _ = require('lodash')
 const articleControll = {
@@ -54,12 +57,30 @@ const articleControll = {
       .catch(e => console.log(e))
   },
   detail (req, res) {
+    let articleToView = {}
     Article.findById({_id: req.params.id})
       .then(article => {
-        let articleToView = _.cloneDeep(article)
+        articleToView = _.cloneDeep(article)
         articleToView.content = marked(articleToView.content)
-        articleToView.firstImgSrc = 
-        res.render('article', articleToView)
+        articleToView.firstImgSrc = util.getFirstSrc(articleToView.content)
+        return Article.findOne({index : articleToView.index - 1})
+          .then(previos  => {
+            if (previos) {
+              articleToView.prev = previos._id
+            }
+            return Article.findOne({index: articleToView.index + 1})
+          })
+          .then(next => {
+            if (next) {
+              articleToView.next = next._id
+            }
+            // console.log(articleToView.index, articleToView.prev, articleToView.next)
+            res.render('article', articleToView)
+          }).catch(e => {
+            res.status = 502
+            console.log(e)
+            throw new Error('数据获取失败')
+          })
       })
   }
 }

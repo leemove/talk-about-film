@@ -3,7 +3,7 @@ block css
   link(rel="stylesheet", href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css")
   link(rel="stylesheet", href="/stylesheets/article.css")
 block content
-  .cover
+  .cover(style={'background-image': `url("${firstImgSrc}")`})
   .container
     h2.text-left=title
     p.text-subtitle.text-left ----关于<#{name}>
@@ -11,8 +11,10 @@ block content
     .content!=content
 
   .footer
-    .previos.float-left 上一篇
-    .next.float-right 下一篇
-    a(herf="/")
+    if prev
+        a.previos.float-left(href=`/article/${prev}`) 上一篇
+    if next
+        a.next.float-right(href=`/article/${next}`) 下一篇
+    a(href="/" class={'float-left': !prev, 'float-right': !next})
       i(class="fa fa-home" aria-hidden="true")
 block js
